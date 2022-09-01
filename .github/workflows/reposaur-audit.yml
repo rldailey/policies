@@ -12,9 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
-      - id: app-token
+      - name: RSR-Audit token
+        id: RSR-Audit
         uses: getsentry/action-github-app-token@v1
         with:
           app_id: ${{ secrets.RSR_APP_ID }}
@@ -24,3 +25,5 @@ jobs:
         uses: reposaur/repo-audit-action@main
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_FULL_TOKEN }}
+
