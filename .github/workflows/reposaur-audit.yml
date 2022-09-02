@@ -25,5 +25,10 @@ jobs:
         uses: reposaur/repo-audit-action@main
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-      #    GITHUB_TOKEN: ${{ secrets.GITHUB_FULL_TOKEN }}
+
+      - name: Upload SARIF file
+        if: always()
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: .reposaur/liatrio-timestamp-messenger.sarif
 
