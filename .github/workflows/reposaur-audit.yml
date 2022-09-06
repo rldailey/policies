@@ -26,15 +26,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
 
-      - name: SARIF Multitool
-        uses: microsoft/sarif-actions@v0.1
-        with:
-          # Command to be sent to SARIF Multitool
-          command: 'validate .reposaur/*.sarif'
+      # - name: SARIF Multitool
+      #   uses: microsoft/sarif-actions@v0.1
+      #   with:
+      #     # Command to be sent to SARIF Multitool
+      #     path: '.reposuar*/*'
+      #     command: 'validate .reposaur/*.sarif'
 
-      - name: Upload SARIF files
-        if: always()
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: .reposaur/*.sarif
+      # - name: Upload SARIF files
+      #   if: always()
+      #   uses: github/codeql-action/upload-sarif@v2
+      #   with:
+      #     sarif_file: .reposaur/*.sarif
 
