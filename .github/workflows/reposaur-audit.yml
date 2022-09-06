@@ -30,7 +30,7 @@ jobs:
         uses: microsoft/sarif-actions@v0.1
         with:
           # Command to be sent to SARIF Multitool
-          command: 'validate reposaur/liatrio-timestamp-messenger.sarif'
+          command: 'validate .reposaur/liatrio-timestamp-messenger.sarif'
 
       - name: Upload SARIF file
         if: always()
