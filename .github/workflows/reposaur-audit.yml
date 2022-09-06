@@ -30,11 +30,11 @@ jobs:
         uses: microsoft/sarif-actions@v0.1
         with:
           # Command to be sent to SARIF Multitool
-          command: 'validate .reposaur/liatrio-timestamp-messenger.sarif'
+          command: 'validate .reposaur/*.sarif'
 
-      - name: Upload SARIF file
+      - name: Upload SARIF files
         if: always()
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: .reposaur/liatrio-timestamp-messenger.sarif
+          sarif_file: .reposaur/*.sarif
 
