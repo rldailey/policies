@@ -32,6 +32,9 @@ jobs:
       #     # Command to be sent to SARIF Multitool
       #     path: '.reposuar*/*'
       #     command: 'validate .reposaur/*.sarif'
+      - name: Output file names
+        run: |
+          ls .reposaur/
 
       - name: Upload SARIF files
         if: always()
