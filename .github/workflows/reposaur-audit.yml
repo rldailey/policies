@@ -25,6 +25,10 @@ jobs:
         uses: reposaur/repo-audit-action@main
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+        with:
+          policy: | 
+            './repositories/security.rego'
+            './repositories/guidelines.rego'
 
       # - name: SARIF Multitool
       #   uses: microsoft/sarif-actions@v0.1
@@ -36,9 +40,9 @@ jobs:
         run: |
           ls .reposaur/
 
-      - name: Upload SARIF files
-        if: always()
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: .reposaur/policies.sarif
-          
+      # - name: Upload SARIF files
+      #   if: always()
+      #   uses: github/codeql-action/upload-sarif@v2
+      #   with:
+      #     sarif_file: .reposaur/policies.sarif
+
