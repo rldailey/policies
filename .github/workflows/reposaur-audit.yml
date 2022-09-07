@@ -25,10 +25,10 @@ jobs:
         uses: reposaur/repo-audit-action@main
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-        with:
-          policy: | 
-            './repositories/security.rego'
-            './repositories/guidelines.rego'
+        # with:
+        #   policy: | 
+        #     './repositories/security.rego'
+        #     './repositories/guidelines.rego'
 
       # - name: SARIF Multitool
       #   uses: microsoft/sarif-actions@v0.1
