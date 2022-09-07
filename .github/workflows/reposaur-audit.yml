@@ -29,11 +29,10 @@ jobs:
         uses: reposaur/repo-audit-action@main
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-       # with:
-          # policy: | 
-          #   '/home/runner/work/policies/policies/repositories/security.rego'
+        with:
+          policy: '/home/runner/work/policies/policies/repositories/'
           #   '/home/runner/work/policies/policies/repositories/guidelines.rego'
-          # output: /home/runner/work/policies/.reposaur
+          output: /home/runner/work/policies/.reposaur/
 
       # - name: SARIF Multitool
       #   uses: microsoft/sarif-actions@v0.1
