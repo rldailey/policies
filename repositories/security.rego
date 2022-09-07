@@ -1,3 +1,6 @@
+# https://codeql.github.com/docs/codeql-cli/manual/github-upload-results/
+
+
 package github.repository
 
 default_branch_protection := github.request("GET /repos/{owner}/{repo}/branches/{branch}/protection", {
@@ -122,7 +125,7 @@ violation_vulnerability_alerts {
 			query($owner: String!, $name: String!) {
 				repository(owner: $owner, name: $name) { 
 					vulnerabilityAlerts(first: 100, states: [OPEN]) {
-						nodes { createdAt }
+						nodes { createdAt }hgr
 					}
 				}
 			}
