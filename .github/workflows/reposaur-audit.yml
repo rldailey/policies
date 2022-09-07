@@ -46,7 +46,10 @@ jobs:
       #     command: 'validate .reposaur/*.sarif'
       - name: Output file names
         run: |
-          ls .reposaur/
+          echo '***************************************************'
+          ls -al
+          echo '***************************************************'
+          echo '***************************************************'
 
       # - name: Upload SARIF files
       #   if: always()
