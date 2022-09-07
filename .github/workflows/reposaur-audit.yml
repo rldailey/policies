@@ -52,9 +52,11 @@ jobs:
           ls .reposaur/
           echo '***************************************************'
 
-      # - name: Upload SARIF files
-      #   if: always()
-      #   uses: github/codeql-action/upload-sarif@v2
-      #   with:
-      #     sarif_file: .reposaur/policies.sarif
+      - name: Upload SARIF files
+        if: always()
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: |
+            .reposaur/policies.sarif
+            .reposaur/test-semantic-release.sarif
 
