@@ -21,6 +21,10 @@ jobs:
           app_id: ${{ secrets.RSR_APP_ID }}
           private_key: ${{ secrets.RSR_PRIVATE_KEY }}
 
+      - name: check working directory
+        run: |
+          echo pwd
+
       - name: Audit
         uses: reposaur/repo-audit-action@main
         env:
