@@ -23,7 +23,7 @@ jobs:
 
       - name: check working directory
         run: |
-          echo pwd
+          pwd
 
       - name: Audit
         uses: reposaur/repo-audit-action@main
