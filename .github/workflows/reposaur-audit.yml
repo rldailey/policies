@@ -57,6 +57,6 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: |
-            .reposaur/policies.sarif
-            .reposaur/test-semantic-release.sarif
+            /home/runner/work/policies/policies/.reposaur/policies.sarif
+            /home/runner/work/policies/policies/.reposaur/test-semantic-release.sarif
 
