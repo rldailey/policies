@@ -30,10 +30,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
         with:
-          policy: | 
-            '/home/runner/work/policies/policies/repositories/security.rego'
-            '/home/runner/work/policies/policies/repositories/guidelines.rego'
-          output: /home/runner/work/policies/.reposaur/
+          # policy: | 
+          #   '/home/runner/work/policies/policies/repositories/security.rego'
+          #   '/home/runner/work/policies/policies/repositories/guidelines.rego'
+          # output: /home/runner/work/policies/.reposaur
 
       # - name: SARIF Multitool
       #   uses: microsoft/sarif-actions@v0.1
