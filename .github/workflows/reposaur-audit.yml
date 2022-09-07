@@ -29,7 +29,7 @@ jobs:
         uses: reposaur/repo-audit-action@main
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-        with:
+       # with:
           # policy: | 
           #   '/home/runner/work/policies/policies/repositories/security.rego'
           #   '/home/runner/work/policies/policies/repositories/guidelines.rego'
